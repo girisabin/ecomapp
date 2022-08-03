@@ -4,8 +4,10 @@
 
 {% block content %}
 
-	<h1 class="text-center">Welcome to our ecommerce website...</h1>
+	<h1 class="text-center">Welcome to our Ecommerce website...</h1><br>
+  <h3 class="text-center">A website that allows people to buy and sell physical goods, services, and digital products over the internet rather than at a brick-and-mortar location. Through an e-commerce website, a business can process orders, accept payments, manage shipping and logistics, and provide customer service.</h3>
 	<hr>
+
 
 <div class="container">
 	<div class="row mt-3">
@@ -14,7 +16,7 @@
 		<div class="col-md-3 card">
 			<div class="m-4">
 
-			<h4><a href="{% url 'ecomapp:productdetail' p.slug %}">{{p.title}}</a></h4>
+			<h4><a class = "ctitle" href="{% url 'ecomapp:productdetail' p.slug %}">{{p.title}}</a></h4>
 			<img src="{{p.image.url}}" alt="" class="img-fluid" style="height: 200px; object-fit: contain;">
 			<p class="mt-3">Price: <strike>Rs {{p.marked_price}} </strike> Rs {{p.selling_price}}</p>
 			<a href="{% url 'ecomapp:addtocart' p.id %}" class="btn btn-primary">Add To Cart</a>
@@ -50,4 +52,10 @@
 </nav>
 
 </div>
+<style>
+  .ctitle{
+    text-decoration: none;
+    font-size: 24px;
+  }
+  </style>
 {% endblock %}
